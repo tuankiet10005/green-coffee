@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 export default function Home() {
   const [form, setForm] = useState({
-    orderInfo: `Thanh Toán ORDER ${Date.now()}`,
+    orderInfo: ` ${Date.now()}`,
     amount:    '50000',
   })
   const [loading, setLoading] = useState(false)
@@ -21,7 +21,7 @@ export default function Home() {
 
     setLoading(true)
     try {
-      const orderId = `ORDER_${Date.now()}`
+      const orderId = `${Date.now()}`
       const res = await fetch('/api/momo/create', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
